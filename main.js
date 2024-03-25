@@ -85,6 +85,12 @@ async function getTemperature(thedate) {
         //console.log(`Data for ${thedate} already exists.`);
         return data.avgTemp;
     } else {
+        // you will need to create a config.js file and include your postal code and weatherapi api key
+        // has the following format
+        // var config = {
+        //MY_KEY : '',
+        //MY_POSTAL : ''
+        //}
         const apiKey = config.MY_KEY;
         const query = config.MY_POSTAL;
         const url = `http://api.weatherapi.com/v1/history.json?key=${apiKey}&q=${query}&dt=${thedate}`;
